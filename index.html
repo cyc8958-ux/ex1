@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기후에너지환경부 | 대한민국 미래를 여는 녹색 전환 포털</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #D97706; /* 따뜻하고 선명한 골든 옐로우/앰버 */
+      --primary-light: #F59E0B; /* 밝은 옐로우 앰버 */
+      --primary-dark: #B45309; /* 깊이감 있는 브라운 골드 */
+      --secondary: #EAB308; /* 생생한 옐로우 */
+      --secondary-light: #FEF9C3; /* 파스텔 옐로우 */
+      --accent-sun: #F59E0B;
+      --accent-leaf: #CA8A04;
+      --bg-main: #FFFDF7; /* 은은한 웜 옐로우 아이보리 배경 */
+      --surface: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border: #F1E5D1;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 14px rgba(217, 119, 6, 0.08);
+      --shadow-lg: 0 10px 25px rgba(217, 119, 6, 0.16);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --transition: all 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      word-break: keep-all;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 상단 정부 상징 바 */
+    .gov-top-bar {
+      background-color: #0c1a1a;
+      color: #94a3b8;
+      font-size: 13px;
+      padding: 6px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .gov-top-bar span i {
+      color: var(--primary-light);
+      margin-right: 6px;
+    }
+    .gov-top-links a {
+      margin-left: 14px;
+      transition: var(--transition);
+    }
+    .gov-top-links a:hover {
+      color: #fff;
+    }
+
+    /* 네비게이션 헤더 */
+    header.main-header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(0, 122, 90, 0.25);
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-menu a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #334155;
+      padding: 8px 4px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-menu a:hover, .nav-menu a.active {
+      color: var(--primary);
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2.5px;
+      background: var(--primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .nav-menu a:hover::after, .nav-menu a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-search-trigger {
+      background: #f1f5f9;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-search-trigger:hover {
+      background: #e2e8f0;
+      color: var(--primary);
+    }
+
+    .btn-portal-action {
+      background: var(--primary);
+      color: white;
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 122, 90, 0.2);
+    }
+
+    .btn-portal-action:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    /* 메인 히어로 섹션 */
+    .hero-section {
+      position: relative;
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FFFDF5 100%);
+      padding: 80px 24px 100px;
+      overflow: hidden;
+    }
+
+    .hero-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(234, 179, 8, 0.12) 0%, transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #92400E;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+
+    .hero-title {
+      font-size: 42px;
+      line-height: 1.28;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero-title .highlight {
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: rgba(251, 191, 36, 0.45);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 34px;
+      max-width: 540px;
+    }
+
+    .hero-search-box {
+      background: white;
+      padding: 6px;
+      border-radius: var(--radius-full);
+      display: flex;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      max-width: 520px;
+      margin-bottom: 24px;
+    }
+
+    .hero-search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 12px 20px;
+      font-size: 15px;
+      border-radius: var(--radius-full);
+      color: var(--text-main);
+    }
+
+    .hero-search-box button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .hero-search-box button:hover {
+      background: var(--primary-dark);
+    }
+
+    .hero-quick-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .hero-quick-tags a {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #cbd5e1;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      color: #334155;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .hero-quick-tags a:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #fff;
+    }
+
+    /* 실시간 대시보드 카드 */
+    .hero-dashboard {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(180, 83, 9, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .dash-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background: #F59E0B;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+
+    .dash-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .dash-card {
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+      transition: var(--transition);
+    }
+
+    .dash-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      border-color: var(--primary-light);
+    }
+
+    .dash-card-label {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dash-card-val {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .dash-card-status {
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .status-good { color: #10b981; }
+    .status-up { color: #2563eb; }
+    .status-accent { color: #ea580c; }
+
+    .dash-notice {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #92400E;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .dash-notice i {
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* 본문 공통 섹션 */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-sub {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 1. 핵심 주요 업무 섹션 */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .mission-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 30px 24px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      transition: var(--transition);
+    }
+
+    .mission-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(217, 119, 6, 0.4);
+    }
+
+    .mission-card:hover::before {
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    }
+
+    .mission-icon-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .icon-green { background: #E8F5E9; color: #2E7D32; }
+    .icon-blue { background: #E3F2FD; color: #1565C0; }
+    .icon-amber { background: #FFF8E1; color: #F57F17; }
+    .icon-teal { background: #E0F2F1; color: #00796B; }
+
+    .mission-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .mission-card p {
+      font-size: 14.5px;
+      color: #64748b;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .mission-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .mission-tag-list span {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .card-link:hover {
+      gap: 10px;
+      color: var(--primary-dark);
+    }
+
+    /* 2. 핫 이슈 & 정책 브리핑 섹션 */
+    .issues-bg {
+      background-color: #FEFCE8;
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .issue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 26px;
+    }
+
+    .issue-card {
+      background: white;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .issue-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .issue-badge-top {
+      padding: 18px 22px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge-category {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .cat-carbon { background: #dbeafe; color: #1e40af; }
+    .cat-energy { background: #fef3c7; color: #92400e; }
+    .cat-eco { background: #dcfce7; color: #166534; }
+    .cat-global { background: #f3e8ff; color: #6b21a8; }
+
+    .issue-date {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .issue-body {
+      padding: 0 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .issue-body h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .issue-body p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .issue-stats {
+      background: #f8fafc;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #334155;
+      border-left: 3px solid var(--primary);
+      margin-bottom: 14px;
+    }
+
+    /* 3. 대국민 체감 서비스 & 혜택 */
+    .benefit-banner {
+      background: linear-gradient(135deg, #B45309 0%, #D97706 60%, #F59E0B 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-bottom: 40px;
+      box-shadow: 0 15px 35px rgba(180, 83, 9, 0.25);
+    }
+
+    .benefit-banner h3 {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .benefit-banner p {
+      font-size: 16px;
+      color: #FEF3C7;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .calc-box {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      color: var(--text-main);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .calc-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .calc-input-group {
+      margin-bottom: 12px;
+    }
+
+    .calc-input-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .calc-input-group select, .calc-input-group input {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .calc-result {
+      background: #FEFCE8;
+      border: 1px dashed #FCD34D;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .calc-result span {
+      font-size: 13px;
+      color: #92400E;
+      display: block;
+    }
+
+    .calc-result strong {
+      font-size: 20px;
+      color: #B45309;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #FEF9C3;
+      color: #D97706;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .service-info h5 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .service-info p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    /* 4. 국민 참여 & 알림마당 */
+    .engage-container {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+    }
+
+    .engage-box {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .engage-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .engage-box-header h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .voice-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #f8fafc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .voice-item:last-child {
+      border-bottom: none;
+    }
+
+    .voice-text {
+      flex: 1;
+      padding-right: 14px;
+    }
+
+    .voice-tag {
+      display: inline-block;
+      font-size: 11px;
+      background: #e2e8f0;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      color: #475569;
+    }
+
+    .voice-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+
+    .voice-status {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .status-review { background: #fef3c7; color: #92400e; }
+    .status-apply { background: #dcfce7; color: #166534; }
+
+    /* FAQ 아코디언 */
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 15px 18px;
+      background: #f8fafc;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: #f1f5f9;
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      padding: 16px 18px;
+      background: white;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+      display: none;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-toggle i {
+      transform: rotate(180deg);
+    }
+
+    .faq-toggle i {
+      transition: transform 0.25s ease;
+      color: #94a3b8;
+    }
+
+    /* 푸터 */
+    footer.main-footer {
+      background: #1C1917;
+      color: #A8A29E;
+      padding: 50px 24px 30px;
+      font-size: 14px;
+      border-top: 4px solid var(--primary);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+
+    .footer-links h6 {
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 9px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      transition: var(--transition);
+      font-size: 13.5px;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: #64748b;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* 모달 */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      max-width: 500px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f1f5f9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* 반응형 스타일 */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .benefit-banner {
+        grid-template-columns: 1fr;
+      }
+      .engage-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .gov-top-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 정부 최상단 유틸리티 바 -->
+  <div class="gov-top-bar">
+    <span><i class="fa-solid fa-flag"></i> 대한민국 정부 공식 누리집 포털</span>
+    <div class="gov-top-links">
+      <a href="#quick-service"><i class="fa-solid fa-bolt"></i> 국민 신속 민원</a>
+      <a href="#carbon-calc"><i class="fa-solid fa-calculator"></i> 탄소중립 계산기</a>
+      <a href="#faq"><i class="fa-regular fa-circle-question"></i> 자주 묻는 질문</a>
+    </div>
+  </div>
+
+  <!-- 메인 헤더 & 내비게이션 -->
+  <header class="main-header">
+    <div class="nav-container">
+      <div class="brand-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="logo-badge">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="brand-text">
+          <h1>기후에너지환경부</h1>
+          <span>MINISTRY OF CLIMATE, ENERGY AND ENVIRONMENT</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#missions">주요 업무</a></li>
+          <li><a href="#issues">최근 이슈 & 정책</a></li>
+          <li><a href="#services">국민 체감 서비스</a></li>
+          <li><a href="#participate">국민 참여 마당</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-search-trigger" onclick="focusSearch()" title="통합 검색"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="btn-portal-action" onclick="openModal('탄소중립 포인트 신청', '국민 누구나 에너지 절약과 친환경 소비로 연 최대 10만 원의 인센티브를 환급받으실 수 있습니다.')">
+          <i class="fa-solid fa-seedling"></i> 탄소포인트 신청
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 히어로 섹션 -->
+  <section class="hero-section">
+    <div class="hero-particles"></div>
+    <div class="hero-content">
+      <div class="hero-text-area">
+        <div class="hero-tag">
+          <i class="fa-solid fa-earth-asia"></i> 탄소중립 2050 실현을 위한 대전환
+        </div>
+        <h2 class="hero-title">
+          맑은 공기, 깨끗한 에너지,<br>
+          <span class="highlight">국민과 함께 여는 녹색 대한민국</span>
+        </h2>
+        <p class="hero-desc">
+          기후위기 대응과 에너지 안보, 지속 가능한 환경 생태계를 하나로 통합하여
+          모든 세대가 누리는 건강하고 안전한 미래를 만듭니다.
+        </p>
+
+        <!-- 포털 검색창 -->
+        <div class="hero-search-box">
+          <input type="text" id="mainSearchInput" placeholder="알고 싶은 기후·에너지 정책이나 보조금을 검색해보세요" onkeypress="handleSearch(event)">
+          <button type="button" onclick="executeSearch()"><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
+        </div>
+
+        <div class="hero-quick-tags">
+          <span>인기 키워드:</span>
+          <a href="javascript:void(0)" onclick="searchKeyword('신재생에너지')">#신재생에너지</a>
+          <a href="javascript:void(0)" onclick="searchKeyword('전기차 보조금')">#전기차 보조금</a>
+          <a href="javascript:void(0)" onclick="searchKeyword('RE100')">#RE100</a>
+          <a href="javascript:void(0)" onclick="searchKeyword('미세먼지 예보')">#미세먼지 예보</a>
+          <a href="javascript:void(0)" onclick="searchKeyword('탄소중립포인트')">#탄소포인트</a>
+        </div>
+      </div>
+
+      <!-- 실시간 환경·에너지 현황 대시보드 위젯 -->
+      <div class="hero-dashboard">
+        <div class="dash-header">
+          <div class="dash-title">
+            <div class="pulse-dot"></div>
+            <span>대한민국 실시간 녹색 지표</span>
+          </div>
+          <span style="font-size: 12px; color: #64748b;" id="currentLiveTime">실시간 기준</span>
+        </div>
+
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-card-label">
+              <span>전국 통합대기질</span>
+              <i class="fa-solid fa-wind" style="color: #0ea5e9;"></i>
+            </div>
+            <div class="dash-card-val">좋음 (18㎍)</div>
+            <div class="dash-card-status status-good">
+              <i class="fa-solid fa-circle-check"></i> 미세먼지 농도 청정
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-label">
+              <span>오늘 청정에너지 발전율</span>
+              <i class="fa-solid fa-solar-panel" style="color: #f59e0b;"></i>
+            </div>
+            <div class="dash-card-val">28.4%</div>
+            <div class="dash-card-status status-up">
+              <i class="fa-solid fa-arrow-trend-up"></i> 전년 대비 4.2%p 증가
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-label">
+              <span>국가 탄소감축 달성율</span>
+              <i class="fa-solid fa-chart-line" style="color: #10b981;"></i>
+            </div>
+            <div class="dash-card-val">64.2%</div>
+            <div class="dash-card-status status-good">
+              <i class="fa-solid fa-check"></i> 2030 NDC 목표 궤도 진입
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-label">
+              <span>친환경 모빌리티 보급</span>
+              <i class="fa-solid fa-car-side" style="color: #6366f1;"></i>
+            </div>
+            <div class="dash-card-val">98.5만대</div>
+            <div class="dash-card-status status-accent">
+              <i class="fa-solid fa-bolt"></i> 100만대 돌파 눈앞
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-notice">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span><strong>오늘의 알림:</strong> 전국 자치단체 탄소중립 실천포인트 신규 접수 진행 중!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 핵심 주요 업무 섹션 -->
+  <section class="section-wrap" id="missions">
+    <div class="section-header">
+      <span class="section-sub">OUR CORE RESPONSIBILITIES</span>
+      <h2 class="section-title">기후에너지환경부의 핵심 주요 업무</h2>
+      <p class="section-desc">지속 가능한 지구와 국민의 삶의 질 향상을 위해 4대 핵심 분야를 빈틈없이 책임집니다.</p>
+    </div>
+
+    <div class="mission-grid">
+      <!-- 업무 1 -->
+      <div class="mission-card">
+        <div class="mission-icon-wrap icon-green">
+          <i class="fa-solid fa-tree"></i>
+        </div>
+        <h3>기후변화 대응 & 탄소중립</h3>
+        <p>국가 온실가스 감축 목표(NDC)를 수립·이행하고, 기후위기 적응 대책과 탄소배출권 거래제를 통해 기후 재난으로부터 국민 안전을 지킵니다.</p>
+        <div class="mission-tag-list">
+          <span>2050 탄소중립</span>
+          <span>온실가스 감축</span>
+          <span>기후적응대책</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('기후변화 대응 정책', '2030 온실가스 40% 감축 및 2050 넷제로 달성을 위한 부문별 세부 로드맵을 체계적으로 추진하고 있습니다.')" class="card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 업무 2 -->
+      <div class="mission-card">
+        <div class="mission-icon-wrap icon-amber">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <h3>청정에너지 전환 & 에너지 안보</h3>
+        <p>태양광, 해상풍력, 청정수소 등 차세대 신재생에너지를 확대하고 국가 스마트 전력망을 고도화하여 안정적이고 경제적인 친환경 에너지를 공급합니다.</p>
+        <div class="mission-tag-list">
+          <span>신재생에너지</span>
+          <span>스마트 전력망</span>
+          <span>수소경제 육성</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('에너지 전환 전략', '화석연료 중심의 에너지 믹스에서 탈피하여 청정에너지 비중을 30% 이상 확대하고 지역 맞춤형 분산에너지를 활성화합니다.')" class="card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 업무 3 -->
+      <div class="mission-card">
+        <div class="mission-icon-wrap icon-blue">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <h3>대기·물·토양 환경 생태계 보전</h3>
+        <p>국민 모두가 안심하고 숨 쉬는 맑은 공기, 깨끗하고 안전한 수돗물 공급, 생물다양성 보전과 자연 생태계 복원으로 쾌적한 생활환경을 제공합니다.</p>
+        <div class="mission-tag-list">
+          <span>초미세먼지 저감</span>
+          <span>스마트 물관리</span>
+          <span>생물다양성</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('생활환경 관리 계획', 'AI 기반의 수계 모니터링 시스템과 미세먼지 첨단 감시 드론을 투입하여 유해 환경 물질을 24시간 철저히 감시합니다.')" class="card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 업무 4 -->
+      <div class="mission-card">
+        <div class="mission-icon-wrap icon-teal">
+          <i class="fa-solid fa-recycle"></i>
+        </div>
+        <h3>순환경제 & 친환경 산업 혁신</h3>
+        <p>폐자원의 재활용을 넘어 제품 전 과정의 자원순환 체계를 구축하고, 녹색금융과 K-택소노미를 통해 친환경 유망 기술·기업의 성장을 견인합니다.</p>
+        <div class="mission-tag-list">
+          <span>탈플라스틱 순환</span>
+          <span>K-택소노미</span>
+          <span>녹색 신산업</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('순환경제 정책', '폐배터리·플라스틱 재자원화 클러스터를 조성하고, 혁신적인 친환경 스타트업에게 연구개발 및 녹색금융 지원을 대폭 강화합니다.')" class="card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 최근 주요 정책 이슈 & 브리핑 섹션 -->
+  <section class="issues-bg" id="issues">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-sub">HOT TOPICS & POLICIES</span>
+        <h2 class="section-title">국민이 주목하는 최근 이슈 & 정책</h2>
+        <p class="section-desc">기후에너지환경부가 추진하는 가장 뜨거운 현안과 알짜 정책 소식을 전해드립니다.</p>
+      </div>
+
+      <!-- 분류 필터 탭 -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterIssues('all', this)">전체 보기</button>
+        <button class="tab-btn" onclick="filterIssues('carbon', this)">탄소중립·기후</button>
+        <button class="tab-btn" onclick="filterIssues('energy', this)">에너지 전환</button>
+        <button class="tab-btn" onclick="filterIssues('eco', this)">친환경 생활</button>
+        <button class="tab-btn" onclick="filterIssues('global', this)">국제협력·산업</button>
+      </div>
+
+      <div class="issue-grid" id="issueCardContainer">
+        <!-- 카드 1 -->
+        <div class="issue-card" data-category="energy">
+          <div class="issue-badge-top">
+            <span class="badge-category cat-energy">에너지 전환</span>
+            <span class="issue-date">2026.11.15</span>
+          </div>
+          <div class="issue-body">
+            <h4>서남해 초대형 해상풍력 복합단지 가동 본격화</h4>
+            <p>국내 최대 규모의 친환경 해상풍력 발전단지가 준공되어 약 150만 가구가 1년 동안 사용할 수 있는 청정 전력을 생산하기 시작했습니다.</p>
+            <div class="issue-stats">
+              <i class="fa-solid fa-bolt"></i> 연간 온실가스 감축 효과: 약 230만 톤 달성 예상
+            </div>
+            <a href="javascript:void(0)" onclick="openModal('서남해 해상풍력 사업', '지역 주민과의 이익 공유형 모델로 추진된 대표적인 상생 재생에너지 프로젝트로, 지역 일자리 창출 3,000여 명 효과를 거두었습니다.')" class="card-link">보도자료 전문 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 카드 2 -->
+        <div class="issue-card" data-category="carbon">
+          <div class="issue-badge-top">
+            <span class="badge-category cat-carbon">탄소중립·기후</span>
+            <span class="issue-date">2026.11.12</span>
+          </div>
+          <div class="issue-body">
+            <h4>2027 친환경 모빌리티 전환 지원책 개편안 발표</h4>
+            <p>소상공인 및 청년층 대상 전기·수소 화물차 및 승용차 보조금을 우대하고 급속 충전 인프라를 전국 고속도로 및 주거지에 대폭 확충합니다.</p>
+            <div class="issue-stats">
+              <i class="fa-solid fa-charging-station"></i> 10분 내 80% 초급속 충전소 전국 5,000기 추가 구축
+            </div>
+            <a href="javascript:void(0)" onclick="openModal('친환경 모빌리티 보조금 개편', '배터리 안전 성능 인증제와 연계하여 화재 안전 기준을 충족한 차량에 추가 인센티브를 부여하는 안심 친환경차 정책을 가동합니다.')" class="card-link">보도자료 전문 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 카드 3 -->
+        <div class="issue-card" data-category="eco">
+          <div class="issue-badge-top">
+            <span class="badge-category cat-eco">친환경 생활</span>
+            <span class="issue-date">2026.11.08</span>
+          </div>
+          <div class="issue-body">
+            <h4>스마트 일회용컵·다회용기 순환 시스템 전국 지자체 확대</h4>
+            <p>커피 전문점 및 배달 플랫폼과의 협업을 통해 다회용기 반납 시 탄소중립포인트를 건당 최대 1,000원까지 현금성 포인트로 적립해 드립니다.</p>
+            <div class="issue-stats">
+              <i class="fa-solid fa-coins"></i> 1인당 연 최대 7만원 상당 즉시 캐시백 지급
+            </div>
+            <a href="javascript:void(0)" onclick="openModal('다회용기 보급 확대', '참여 배달앱에서 다회용기 선택 시 무료 수거 서비스와 함께 탄소중립 포인트를 자동으로 적립받을 수 있는 스마트 통합망이 연동되었습니다.')" class="card-link">보도자료 전문 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 카드 4 -->
+        <div class="issue-card" data-category="global">
+          <div class="issue-badge-top">
+            <span class="badge-category cat-global">국제협력·산업</span>
+            <span class="issue-date">2026.11.03</span>
+          </div>
+          <div class="issue-body">
+            <h4>유럽연합 탄소국경조정제도(CBAM) 대응 'K-수출 지원단' 가동</h4>
+            <p>강화되는 글로벌 탄소 무역 장벽에 선제적으로 대응하여, 중소·중견 수출 기업을 대상으로 탄소 배출량 무료 산정 및 저감 컨설팅을 지원합니다.</p>
+            <div class="issue-stats">
+              <i class="fa-solid fa-shield-halved"></i> 1,200개 수출 중소기업 1:1 맞춤형 탄소 바우처 바우처 제공
+            </div>
+            <a href="javascript:void(0)" onclick="openModal('K-수출 탄소 대응 바우처', '철강, 알루미늄, 화학 등 주요 규제 대상 품목 생산 기업에 전산 시스템 구축 비용과 제3자 검증 비용을 최대 80% 지원합니다.')" class="card-link">보도자료 전문 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 카드 5 -->
+        <div class="issue-card" data-category="carbon">
+          <div class="issue-badge-top">
+            <span class="badge-category cat-carbon">탄소중립·기후</span>
+            <span class="issue-date">2026.10.28</span>
+          </div>
+          <div class="issue-body">
+            <h4>AI 기후재난 조기 경보망 가동: 국지성 폭우·가뭄 정밀 예측</h4>
+            <p>초고성능 슈퍼컴퓨터와 인공지능 수문 분석 모델을 융합하여 침수 위험 지역을 침수 3시간 전에 골목 단위까지 선제 경보하는 시스템을 완공했습니다.</p>
+            <div class="issue-stats">
+              <i class="fa-solid fa-cloud-showers-heavy"></i> 도심 침수 피해 예측 정확도 기존 대비 40% 이상 향상
+            </div>
+            <a href="javascript:void(0)" onclick="openModal('AI 기후 조기경보망', '국민비서 알림톡 및 안전디딤돌 앱과 직접 연계하여 거주지 인근 하천 범람 위험 시 즉각 대피 경로를 안내합니다.')" class="card-link">보도자료 전문 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 카드 6 -->
+        <div class="issue-card" data-category="energy">
+          <div class="issue-badge-top">
+            <span class="badge-category cat-energy">에너지 전환</span>
+            <span class="issue-date">2026.10.20</span>
+          </div>
+          <div class="issue-body">
+            <h4>가정용 에너지 캐시백 시즌 시작: 전기 절약하면 요금 페이백</h4>
+            <p>직전 2개년 동월 평균 대비 전기를 3% 이상 절감한 가구에 절감량 1kWh당 최대 100원까지 다음 달 전기요금에서 차감해 드립니다.</p>
+            <div class="issue-stats">
+              <i class="fa-solid fa-piggy-bank"></i> 가구당 월 평균 15,000원 상당 전기요금 할인 혜택
+            </div>
+            <a href="javascript:void(0)" onclick="openModal('에너지 캐시백 제도', '한전 에너지마켓플레이스 또는 본 포털을 통해 주민등록 세대주 누구나 주소지 입력만으로 1분 안에 신청 가능합니다.')" class="card-link">보도자료 전문 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 대국민 체감 서비스 & 시뮬레이터 -->
+  <section class="section-wrap" id="services">
+    <div class="section-header">
+      <span class="section-sub">CITIZEN BENEFITS</span>
+      <h2 class="section-title">국민이 직접 누리는 녹색 혜택 & 간편 서비스</h2>
+      <p class="section-desc">탄소를 줄이고 깨끗한 에너지를 실천할수록 국민 여러분께 직접적인 혜택이 돌아갑니다.</p>
+    </div>
+
+    <!-- 탄소중립 포인트 즉석 계산기 배너 -->
+    <div class="benefit-banner" id="carbon-calc">
+      <div>
+        <h3>지구를 지키는 작은 습관,<br>얼마나 환급받을 수 있을까요?</h3>
+        <p>
+          텀블러 사용, 전자영수증 발급, 친환경차 운전, 대중교통 이용 등 일상 속 쉬운 실천으로
+          가계 경제에도 보탬이 되는 <strong>탄소중립실천포인트</strong>를 지금 바로 계산해 보세요!
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn-portal-action" style="background: white; color: var(--primary-dark);" onclick="openModal('신청 안내', '본인인증 후 계좌번호만 입력하면 매월 적립된 포인트가 현금으로 자동 입금됩니다.')">
+            <i class="fa-solid fa-pen-to-square"></i> 회원가입 및 즉시 연동
+          </button>
+        </div>
+      </div>
+
+      <div class="calc-box">
+        <div class="calc-title">
+          <i class="fa-solid fa-calculator" style="color: var(--primary);"></i>
+          <span>나의 연간 예상 인센티브 간편 계산</span>
+        </div>
+
+        <div class="calc-input-group">
+          <label>주간 다회용 컵(텀블러) 사용 횟수</label>
+          <select id="calcCup" onchange="calculateEcoReward()">
+            <option value="0">사용 안 함</option>
+            <option value="2">주 2회 (연간 약 100회)</option>
+            <option value="5" selected>주 5회 (직장/카페 매일)</option>
+            <option value="10">주 10회 이상 (적극 실천)</option>
+          </select>
+        </div>
+
+        <div class="calc-input-group">
+          <label>종이영수증 대신 모바일 전자영수증</label>
+          <select id="calcReceipt" onchange="calculateEcoReward()">
+            <option value="10">월 10건 (소량)</option>
+            <option value="30" selected>월 30건 (보통 실천)</option>
+            <option value="60">월 60건 이상 (대부분 전자영수증)</option>
+          </select>
+        </div>
+
+        <div class="calc-input-group">
+          <label>대중교통 이용 및 자전거 마일리지</label>
+          <select id="calcMobility" onchange="calculateEcoReward()">
+            <option value="0">주로 자가용 이용</option>
+            <option value="20000" selected>주 3~4회 지하철·버스 이용</option>
+            <option value="40000">매일 대중교통 + 따릉이/타슈 등</option>
+          </select>
+        </div>
+
+        <div class="calc-result">
+          <span>연간 예상 실천 인센티브 환급액</span>
+          <strong id="calcResultDisplay">78,000 원</strong>
+          <small style="display: block; font-size: 11px; color: #4b5563; margin-top: 4px;">* 탄소포인트 및 에너지캐시백 합산 시 최대 15만 원 한도</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 국민 신속 조회 서비스 퀵 카드 -->
+    <div class="service-grid" id="quick-service">
+      <div class="service-card" onclick="openModal('우리 동네 실시간 대기정보', '현재 계신 위치의 미세먼지(PM2.5, PM10), 오존, 이산화탄소 지수를 1시간 단위 정밀 데이터로 제공합니다.')">
+        <div class="service-icon"><i class="fa-solid fa-smog"></i></div>
+        <div class="service-info">
+          <h5>우리 동네 대기질 예보</h5>
+          <p>미세먼지, 초미세먼지 및 황사 위험도를 지도에서 확인하세요.</p>
+        </div>
+      </div>
+
+      <div class="service-card" onclick="openModal('전기차·수소차 보조금 잔여 현황', '2026년도 지자체별 전기 승용/화물차 국고보조금 잔여 대수 및 신청 접수 현황입니다.')">
+        <div class="service-icon"><i class="fa-solid fa-car"></i></div>
+        <div class="service-info">
+          <h5>친환경차 보조금 조회</h5>
+          <p>지역별 국고·지자체 지원금 잔여 예산과 신청 자격을 조회합니다.</p>
+        </div>
+      </div>
+
+      <div class="service-card" onclick="openModal('가정용 태양광 설치 무상 컨설팅', '아파트 베란다형 및 단독주택 옥상 태양광 설비 설치 시 정부지원금 70%를 지원해드립니다.')">
+        <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
+        <div class="service-info">
+          <h5>가정용 신재생에너지 지원</h5>
+          <p>주택 태양광·지열 설치비 최대 70% 무상 보조 사업 안내입니다.</p>
+        </div>
+      </div>
+
+      <div class="service-card" onclick="openModal('폐가전 무상방문수거 예약', '냉장고, 세탁기 등 대형 폐가전은 물론 소형 가전 5개 이상 배출 시 기사가 가정을 직접 방문하여 무료 수거합니다.')">
+        <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+        <div class="service-info">
+          <h5>폐가전제품 무상방문수거</h5>
+          <p>수수료 없이 집 앞까지 찾아가서 안전하게 재활용 수거합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 국민 참여 & 알림마당 섹션 -->
+  <section class="issues-bg" id="participate">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-sub">VOICE OF CITIZENS</span>
+        <h2 class="section-title">국민과 함께 만드는 녹색 정책</h2>
+        <p class="section-desc">여러분의 아이디어가 기후위기를 막는 대한민국의 공식 정책이 됩니다.</p>
+      </div>
+
+      <div class="engage-container">
+        <!-- 국민 제안 현황 -->
+        <div class="engage-box">
+          <div class="engage-box-header">
+            <h4><i class="fa-solid fa-comments" style="color: var(--primary);"></i> 실시간 국민 제안 게시판</h4>
+            <button class="btn-portal-action" style="padding: 6px 14px; font-size: 13px;" onclick="openProposalModal()">제안하기</button>
+          </div>
+
+          <div id="proposalList">
+            <div class="voice-item">
+              <div class="voice-text">
+                <span class="voice-tag">생활에너지</span>
+                <div class="voice-title">아파트 지하주차장 형광등의 초고효율 스마트 센서 LED 전면 교체 지원 요청</div>
+              </div>
+              <span class="voice-status status-apply">정책 반영 채택</span>
+            </div>
+
+            <div class="voice-item">
+              <div class="voice-text">
+                <span class="voice-tag">자원순환</span>
+                <div class="voice-title">배달의민족, 요기요 등 배달앱 내 일회용 수저 안 받기 기본 기본설정 법제화 제안</div>
+              </div>
+              <span class="voice-status status-apply">시행령 개정 중</span>
+            </div>
+
+            <div class="voice-item">
+              <div class="voice-text">
+                <span class="voice-tag">기후적응</span>
+                <div class="voice-title">폭염 취약 어르신 가구 대상 친환경 옥상 쿨루프(Cool Roof) 시공 확대 제안</div>
+              </div>
+              <span class="voice-status status-review">부처 검토 중</span>
+            </div>
+
+            <div class="voice-item">
+              <div class="voice-text">
+                <span class="voice-tag">친환경차</span>
+                <div class="voice-title">다세대·연립주택 밀집 지역 가로등 활용 완속 충전기 보급 정책 건의</div>
+              </div>
+              <span class="voice-status status-review">타당성 조사 중</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 자주 묻는 질문(FAQ) 아코디언 -->
+        <div class="engage-box" id="faq">
+          <div class="engage-box-header">
+            <h4><i class="fa-regular fa-circle-question" style="color: var(--primary);"></i> 자주 묻는 질문 (FAQ)</h4>
+            <span style="font-size: 13px; color: #64748b;">국민들이 가장 궁금해하는 TOP 4</span>
+          </div>
+
+          <div class="faq-item open">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. 기후에너지환경부는 기존 부처와 무엇이 다른가요?</span>
+              <span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              기존 환경부의 생태·보전 기능과 산업통상자원부의 에너지 정책 기능을 하나로 통합한 정부 부처입니다. 기후변화 위기에 단일 컨트롤타워로 즉각 대응하고, 재생에너지 전환과 친환경 산업 생태계를 유기적으로 육성하기 위해 출범하였습니다.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. 탄소중립포인트는 어떻게 현금으로 돌려받나요?</span>
+              <span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              본 포털 또는 탄소중립포인트 누리집에서 가입하신 후, 본인 명의 계좌를 등록하시면 됩니다. 전자영수증 발급, 텀블러 이용, 친환경 제품 구매 등 실적이 자동으로 연동되어 매월 또는 반기별로 등록된 계좌에 현금으로 이체됩니다.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. 2026년 전기차 보조금은 언제 소진되나요?</span>
+              <span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              지자체별 예산 배정에 따라 차이가 있으나, 상반기/하반기로 나누어 집행됩니다. '친환경차 통합누리집' 또는 상단의 빠른 서비스를 통해 지자체별 실시간 접수 잔여 대수를 확인하실 수 있습니다.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Q. 신재생에너지 발전 사업자 허가는 어디서 신청하나요?</span>
+              <span class="faq-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              발전 설비 용량 3,000kW 이하는 해당 관할 시·도지사에게 신청하며, 3,000kW 초과는 기후에너지환경부 전기위원회 심의를 거쳐 허가됩니다. 온라인 원스톱 인허가 창구를 통해 간편 신청이 가능합니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하단 푸터 -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <i class="fa-solid fa-sun" style="color: var(--primary-light);"></i>
+            <span>기후에너지환경부</span>
+          </div>
+          <p class="footer-desc">
+            (우 30103) 세종특별자치시 도움6로 11 정부세종청사 6동<br>
+            대표전화: <strong>1577-8822</strong> (국번없이 129)<br>
+            야간 환경안전 종합상황실: 044-201-6000<br>
+            운영시간: 평일 09:00 ~ 18:00 (공휴일 제외)
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h6>국민 소통 & 참여</h6>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="openModal('국민신문고', '환경·에너지 분야 고충 민원 및 공익 제보는 국민신문고와 연동 처리됩니다.')">국민신문고 민원신청</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('정책 토론광장', '매주 수요일 장관 및 실국장이 참여하는 라이브 정책 간담회가 열립니다.')">온라인 정책 공청회</a></li>
+            <li><a href="javascript:void(0)" onclick="openProposalModal()">국민제안 등록하기</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('적극행정 마당', '창의적이고 능동적인 공직 문화 조성을 위한 적극행정 우수사례를 공유합니다.')">적극행정 온(ON)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h6>정보공개 & 데이터</h6>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="openModal('정보공개청구', '행정정보 사전공표 목록 및 정보공개청구 절차 안내입니다.')">행정정보 사전공표</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('기후 환경 공공데이터', '전국 대기질, 온실가스 배출량, 재생에너지 발전량 오픈 API를 무료 개방합니다.')">오픈데이터(API) 센터</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('예산 및 결산 현황', '2026년도 기후에너지환경부 세출예산 및 기후대응기금 집행 내역입니다.')">기후기금 재정 운용 공시</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('조직도 안내', '기후대응실, 에너지전환정책관, 자연환경정책관 등 부서별 연락처를 조회합니다.')">부서별 직원 연락처</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h6>관련 산하기관 바로가기</h6>
+          <ul>
+            <li><a href="https://www.keco.or.kr" target="_blank" rel="noopener">한국환경공단 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i></a></li>
+            <li><a href="https://www.energy.or.kr" target="_blank" rel="noopener">한국에너지공단 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i></a></li>
+            <li><a href="https://www.kwater.or.kr" target="_blank" rel="noopener">한국수자원공사 (K-water) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i></a></li>
+            <li><a href="https://www.keiti.re.kr" target="_blank" rel="noopener">한국환경산업기술원 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <a href="javascript:void(0)" style="color: #cbd5e1; font-weight: bold; margin-right: 14px;">개인정보처리방침</a>
+          <a href="javascript:void(0)" style="margin-right: 14px;">저작권 정책</a>
+          <a href="javascript:void(0)" style="margin-right: 14px;">웹 접근성 품질인증 안내</a>
+          <a href="javascript:void(0)">누리집 이용 안내</a>
+        </div>
+        <p>© 2026 Ministry of Climate, Energy and Environment. Republic of Korea. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 알림/상세 안내 공통 모달 -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modalTitle" style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 12px;">알림</h3>
+      <p id="modalContent" style="font-size: 15px; color: #475569; line-height: 1.6; margin-bottom: 24px;">내용</p>
+      <div style="text-align: right;">
+        <button class="btn-portal-action" style="padding: 8px 20px;" onclick="closeModal()">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 국민 제안 등록 모달 -->
+  <div class="modal-overlay" id="proposalModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeProposalModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 6px;">💡 국민 정책 아이디어 제안</h3>
+      <p style="font-size: 13.5px; color: #64748b; margin-bottom: 18px;">국민 여러분의 소중한 의견은 실제 법령 및 사업 계획에 적극 검토됩니다.</p>
+
+      <div class="calc-input-group">
+        <label>제안 분야</label>
+        <select id="propCategory">
+          <option value="기후적응">기후적응 및 재난안전</option>
+          <option value="신재생에너지">신재생에너지 및 절전</option>
+          <option value="자원순환">탈플라스틱 및 자원순환</option>
+          <option value="생활환경">대기질 및 깨끗한 물</option>
+        </select>
+      </div>
+
+      <div class="calc-input-group">
+        <label>제안 제목</label>
+        <input type="text" id="propTitle" placeholder="예: 전기차 완속 충전기 지상화 설치 지원 방안">
+      </div>
+
+      <div class="calc-input-group">
+        <label>주요 내용 및 기대 효과</label>
+        <textarea id="propDesc" rows="4" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; outline: none; resize: vertical;" placeholder="문제점과 개선 아이디어를 자유롭게 적어주세요."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px;">
+        <button type="button" style="padding: 8px 18px; border-radius: var(--radius-full); border: 1px solid #cbd5e1; background: #fff; cursor: pointer;" onclick="closeProposalModal()">취소</button>
+        <button type="button" class="btn-portal-action" onclick="submitProposal()">제안 등록하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 인라인 자바스크립트 -->
+  <script>
+    // 현재 시간 표시
+    function updateLiveTime() {
+      const now = new Date();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const date = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const elem = document.getElementById('currentLiveTime');
+      if (elem) {
+        elem.innerText = `${month}.${date} ${hours}:${minutes} 갱신`;
+      }
+    }
+    updateLiveTime();
+
+    // 탄소중립 포인트 간편 계산기
+    function calculateEcoReward() {
+      const cupTimes = parseInt(document.getElementById('calcCup').value);
+      const receiptCount = parseInt(document.getElementById('calcReceipt').value);
+      const mobilityVal = parseInt(document.getElementById('calcMobility').value);
+
+      // 텀블러: 회당 300원 (연간 주 52주 환산)
+      const cupTotal = cupTimes * 52 * 300;
+      // 전자영수증: 건당 100원 (연 12개월)
+      const receiptTotal = receiptCount * 12 * 100;
+      // 대중교통/자전거
+      const mobilityTotal = mobilityVal;
+
+      const grandTotal = cupTotal + receiptTotal + mobilityTotal;
+      document.getElementById('calcResultDisplay').innerText = grandTotal.toLocaleString() + ' 원';
+    }
+
+    // 이슈 필터링
+    function filterIssues(category, btnElement) {
+      const buttons = document.querySelectorAll('.filter-tabs .tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.issue-grid .issue-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // FAQ 아코디언 토글
+    function toggleFaq(questionElem) {
+      const item = questionElem.parentElement;
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    // 검색창 포커스
+    function focusSearch() {
+      const input = document.getElementById('mainSearchInput');
+      input.focus();
+      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // 키워드 태그 클릭 검색
+    function searchKeyword(keyword) {
+      const input = document.getElementById('mainSearchInput');
+      input.value = keyword;
+      executeSearch();
+    }
+
+    function handleSearch(event) {
+      if (event.key === 'Enter') {
+        executeSearch();
+      }
+    }
+
+    function executeSearch() {
+      const query = document.getElementById('mainSearchInput').value.trim();
+      if (!query) {
+        alert('검색어를 입력해 주세요.');
+        return;
+      }
+      openModal(`"${query}" 관련 검색 결과 안내`, `기후에너지환경부 통합 데이터베이스에서 '${query}' 관련 정책 자료, 보도자료 42건, 지원 사업 5건이 검색되었습니다. 상세 페이지로 안전하게 연결합니다.`);
+    }
+
+    // 모달 제어
+    function openModal(title, message) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalContent').innerText = message;
+      document.getElementById('infoModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('infoModal').style.display = 'none';
+    }
+
+    function openProposalModal() {
+      document.getElementById('proposalModal').style.display = 'flex';
+    }
+
+    function closeProposalModal() {
+      document.getElementById('proposalModal').style.display = 'none';
+    }
+
+    // 국민 제안 등록
+    function submitProposal() {
+      const category = document.getElementById('propCategory').value;
+      const title = document.getElementById('propTitle').value.trim();
+      const desc = document.getElementById('propDesc').value.trim();
+
+      if (!title || !desc) {
+        alert('제안 제목과 내용을 모두 입력해 주세요.');
+        return;
+      }
+
+      const list = document.getElementById('proposalList');
+      const newItem = document.createElement('div');
+      newItem.className = 'voice-item';
+      newItem.style.backgroundColor = '#FEFCE8';
+      newItem.innerHTML = `
+        <div class="voice-text">
+          <span class="voice-tag">${category}</span>
+          <div class="voice-title">${title}</div>
+        </div>
+        <span class="voice-status status-review" style="background:#e0f2fe; color:#0369a1;">접수 완료</span>
+      `;
+
+      list.insertBefore(newItem, list.firstChild);
+      closeProposalModal();
+      document.getElementById('propTitle').value = '';
+      document.getElementById('propDesc').value = '';
+
+      openModal('국민 제안 접수 완료', `소중한 제안 "${title}"이(가) 정상적으로 등록되었습니다! 담당 부서(기후에너지환경부) 검토 후 14일 이내 결과를 안내해 드립니다.`);
+    }
+
+    // 모달 배경 클릭 시 닫기
+    window.onclick = function(event) {
+      const infoModal = document.getElementById('infoModal');
+      const propModal = document.getElementById('proposalModal');
+      if (event.target === infoModal) closeModal();
+      if (event.target === propModal) closeProposalModal();
+    }
+  </script>
+</body>
+</html>
